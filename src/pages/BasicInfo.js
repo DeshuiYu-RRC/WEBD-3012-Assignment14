@@ -30,14 +30,14 @@ function BasicInfo() {
             </div>
             <div className="social-links">
               <Button
-                variant="primary"
+                variant="secondary"
                 size="medium"
                 onClick={() => window.open(basicInfo.github, '_blank')}
               >
                 GitHub
               </Button>
               <Button
-                variant="primary"
+                variant="success"
                 size="medium"
                 onClick={() => window.open(basicInfo.linkedin, '_blank')}
               >

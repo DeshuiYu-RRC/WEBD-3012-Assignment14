@@ -15,7 +15,7 @@ export const workProjects = [
     title: 'WEBD-3012-Assignment11',
     description:
       'This project is a Node.js web application that runs on http://127.0.0.1:7775.\nIt uses Node 20 (Alpine) as the base image and exposes port 7775 for development.',
-    image: 'https://placehold.co/400x300?text=Assignment11',
+    image: 'https://placehold.co/400x300?text=Assignment11%5CnReact',
     link: 'https://github.com/DeshuiYu-RRC/WEBD-3012-Assignment11',
     techList: [
       'React',
@@ -32,7 +32,7 @@ export const workProjects = [
     title: 'WEBD-3012-Assignment12',
     description:
       'A comprehensive UI component library built with React, TypeScript, Styled Components, and Storybook.',
-    image: 'https://placehold.co/400x300?text=Assignment12',
+    image: 'https://placehold.co/400x300?text=Assignment12%5CnStorybook',
     link: 'https://github.com/DeshuiYu-RRC/WEBD-3012-Assignment12',
     techList: ['React', 'TypeScript', 'Git', 'Docker', 'Storybook', 'CSS'],
   },
@@ -41,8 +41,17 @@ export const workProjects = [
     title: 'WEBD-3012-Assignment13',
     description:
       'This project is a complete UI component library featuring 10 reusable React components with full Storybook integration, comprehensive testing, Docker deployment support, and automated code quality checks.',
-    image: 'https://placehold.co/400x300?text=Assignment13',
+    image: 'https://placehold.co/400x300?text=Assignment13%5CnCI/CD',
     link: 'https://github.com/DeshuiYu-RRC/WEBD-3012-Assignment12',
+    techList: ['React', 'TypeScript', 'Git', 'Docker', 'Storybook', 'CSS'],
+  },
+  {
+    id: 4,
+    title: 'WEBD-3012-Assignment14',
+    description:
+      'This project is a complete UI component library featuring 10 reusable React components with full Storybook integration, comprehensive testing, Docker deployment support, and automated code quality checks.',
+    image: 'https://placehold.co/400x300?text=Assignment14%5CnPortfolio',
+    link: 'https://github.com/DeshuiYu-RRC/WEBD-3012-Assignment14',
     techList: ['React', 'TypeScript', 'Git', 'Docker', 'Storybook', 'CSS'],
   },
 ];
@@ -66,31 +75,31 @@ export const resources = [
   {
     id: 1,
     title: 'React Documentation',
-    icon: '⚛️',
+    icon: '/icons/react.png',
     summary:
       'Official React documentation with tutorials, guides, and comprehensive API references for building modern web applications.',
-    link: 'https://react.dev/',
+    link: 'https://react.dev/learn',
   },
   {
     id: 2,
     title: 'Docker Documentation',
-    icon: '🐳',
+    icon: '/icons/docker.png',
     summary:
       'Complete Docker documentation covering containerization, deployment, and best practices for building portable applications.',
-    link: 'https://docs.docker.com/',
+    link: 'https://docs.docker.com/get-started/',
   },
   {
     id: 3,
-    title: 'MDN Web Docs',
-    icon: '📚',
+    title: 'Git',
+    icon: '/icons/git.png',
     summary:
-      'Comprehensive documentation for web technologies including HTML, CSS, JavaScript, and web APIs.',
-    link: 'https://developer.mozilla.org/',
+      'Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.',
+    link: 'https://git-scm.com/learn',
   },
   {
     id: 4,
     title: 'GitHub',
-    icon: '🐙',
+    icon: '/icons/github.png',
     summary:
       'Version control and collaboration platform using Git. Essential for team development and project management.',
     link: 'https://github.com/',
@@ -98,15 +107,15 @@ export const resources = [
   {
     id: 5,
     title: 'Storybook',
-    icon: '📖',
+    icon: '/icons/storybook.png',
     summary:
       'UI component development tool for building, testing, and documenting React components in isolation.',
-    link: 'https://storybook.js.org/',
+    link: 'https://storybook.js.org/docs',
   },
   {
     id: 6,
     title: 'Node Version Manager',
-    icon: '🔧',
+    icon: '/icons/nvm.png',
     summary:
       'NVM allows you to manage multiple Node.js versions on your machine and switch between them easily.',
     link: 'https://github.com/nvm-sh/nvm',
@@ -122,6 +131,7 @@ export const developerSetup = {
       'GitLens',
       'Docker',
       'Live Server',
+      'GitHub',
       'React/Redux/React-Native snippets',
     ],
     settings:

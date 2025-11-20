@@ -2,6 +2,7 @@ import React from 'react';
 import { Card } from '../components/Card/Card';
 import { Button } from '../components/Button/Button';
 import { Text } from '../components/Text/Text';
+import { Img } from '../components/Img/Img';
 import { resources } from '../data/portfolioData';
 
 function Resources() {
@@ -14,10 +15,17 @@ function Resources() {
         <div className="resources-grid">
           {resources.map((resource) => (
             <Card key={resource.id} title={resource.title}>
-              <div className="resource-icon">{resource.icon}</div>
+              <div className="resource-icon">
+                <Img
+                  src={resource.icon}
+                  alt={resource.title}
+                  width="64px"
+                  height="64px"
+                />
+              </div>
               <Text>{resource.summary}</Text>
               <Button
-                variant="primary"
+                variant="secondary"
                 size="medium"
                 onClick={() => window.open(resource.link, '_blank')}
               >

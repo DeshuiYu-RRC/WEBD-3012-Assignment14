@@ -31,7 +31,7 @@ function Work() {
               </div>
 
               <Button
-                variant="primary"
+                variant="success"
                 size="medium"
                 onClick={() => window.open(project.link, '_blank')}
               >

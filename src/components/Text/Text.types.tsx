@@ -3,6 +3,6 @@ export interface TextProps {
   backgroundColor?: string;
   color?: string;
   disabled?: boolean;
-  size?: 'small' | 'medium' | 'large';
+  size?: 'small' | 'medium' | 'large' | 'xl';
   weight?: 'normal' | 'bold';
 }

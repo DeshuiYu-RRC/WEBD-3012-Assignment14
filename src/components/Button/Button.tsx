@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { ButtonProps } from './Button.types';
 
 // Styled component - this is our CSS
-const StyledButton = styled.button<ButtonProps>`
+const StyledButton = styled.button<ButtonProps & { variant?: string }>`
   padding: ${({ size }) =>
     size === 'small'
       ? '8px 16px'
@@ -12,23 +12,33 @@ const StyledButton = styled.button<ButtonProps>`
         : '12px 24px'};
   font-size: ${({ size }) =>
     size === 'small' ? '14px' : size === 'large' ? '18px' : '16px'};
-  background-color: ${({ backgroundColor, disabled }) =>
-    disabled ? '#cccccc' : backgroundColor || '#007bff'};
+  background-color: ${({ backgroundColor, disabled, variant }) => {
+    if (disabled) return '#cccccc';
+    if (backgroundColor) return backgroundColor;
+    if (variant === 'primary') return '#3498db';
+    if (variant === 'secondary') return '#e74c3c';
+    if (variant === 'success') return '#27ae60';
+    return '#3498db';
+  }};
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'pointer')};
   transition: all 0.3s ease;
   opacity: ${({ disabled }) => (disabled ? 0.6 : 1)};
+  font-weight: 500;
 
   &:hover {
-    background-color: ${({ disabled, backgroundColor }) =>
-      disabled
-        ? '#cccccc'
-        : backgroundColor
-          ? `${backgroundColor}dd`
-          : '#0056b3'};
+    background-color: ${({ disabled, backgroundColor, variant }) => {
+      if (disabled) return '#cccccc';
+      if (backgroundColor) return `${backgroundColor}dd`;
+      if (variant === 'primary') return '#2980b9';
+      if (variant === 'secondary') return '#c0392b';
+      if (variant === 'success') return '#229954';
+      return '#2980b9';
+    }};
     transform: ${({ disabled }) => (disabled ? 'none' : 'translateY(-2px)')};
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
 
   /* Responsive design for mobile */

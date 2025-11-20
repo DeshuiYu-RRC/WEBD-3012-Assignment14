@@ -5,7 +5,7 @@ import { CardProps } from './Card.types';
 const StyledCard = styled.div<CardProps>`
   background-color: ${({ backgroundColor, disabled }) =>
     disabled ? '#e0e0e0' : backgroundColor || '#ffffff'};
-  border-radius: 8px;
+  border-radius: 12px;
   padding: 24px;
   box-shadow: ${({ elevation, disabled }) =>
     disabled
@@ -14,18 +14,21 @@ const StyledCard = styled.div<CardProps>`
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'default')};
   opacity: ${({ disabled }) => (disabled ? 0.6 : 1)};
   transition: all 0.3s ease;
-  max-width: 400px;
+  max-width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 
   &:hover {
+    transform: translateY(-5px);
     box-shadow: ${({ elevation, disabled }) =>
       disabled
         ? 'none'
-        : `0 ${(elevation || 2) + 2}px ${((elevation || 2) + 2) * 4}px rgba(0,0,0,0.15)`};
+        : `0 ${(elevation || 2) + 4}px ${((elevation || 2) + 4) * 4}px rgba(0,0,0,0.2)`};
   }
 
   @media (max-width: 768px) {
     padding: 16px;
-    max-width: 100%;
   }
 `;
 
