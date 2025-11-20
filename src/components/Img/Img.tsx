@@ -5,7 +5,7 @@ import { ImgProps } from './Img.types';
 const ImgContainer = styled.div<ImgProps>`
   display: inline-block;
   background-color: ${({ backgroundColor }) =>
-      backgroundColor || 'transparent'};
+    backgroundColor || 'transparent'};
   opacity: ${({ disabled }) => (disabled ? 0.4 : 1)};
   cursor: ${({ disabled }) => (disabled ? 'not-allowed' : 'default')};
   transition: all 0.3s ease;
@@ -18,7 +18,7 @@ const ImgContainer = styled.div<ImgProps>`
 
 const StyledImg = styled.img.withConfig({
   shouldForwardProp: (prop) =>
-      !['width', 'height', 'borderRadius'].includes(prop as string),
+    !['width', 'height', 'borderRadius'].includes(prop as string),
 })<ImgProps>`
   width: ${({ width }) => width || '200px'};
   height: ${({ height }) => height || 'auto'};
@@ -33,28 +33,28 @@ const StyledImg = styled.img.withConfig({
 `;
 
 export const Img: React.FC<ImgProps> = ({
-                                          src = 'https://placehold.co/300x200?text=Hello+World',
-                                          alt = 'Placeholder image',
-                                          backgroundColor,
-                                          disabled = false,
-                                          width,
-                                          height,
-                                          borderRadius,
-                                        }) => {
+  src = 'https://placehold.co/300x200?text=Hello+World',
+  alt = 'Placeholder image',
+  backgroundColor,
+  disabled = false,
+  width,
+  height,
+  borderRadius,
+}) => {
   return (
-      <ImgContainer
-          backgroundColor={backgroundColor}
-          disabled={disabled}
-          data-testid="img-container"
-      >
-        <StyledImg
-            src={src}
-            alt={alt}
-            width={width}
-            height={height}
-            borderRadius={borderRadius}
-            data-testid="img-component"
-        />
-      </ImgContainer>
+    <ImgContainer
+      backgroundColor={backgroundColor}
+      disabled={disabled}
+      data-testid="img-container"
+    >
+      <StyledImg
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        borderRadius={borderRadius}
+        data-testid="img-component"
+      />
+    </ImgContainer>
   );
 };
