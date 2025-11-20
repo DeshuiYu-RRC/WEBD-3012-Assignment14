@@ -33,20 +33,20 @@ The library contains the following components, each with default and disabled st
 #### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/DeshuiYu-RRC/WEBD-3012-Assignment12.git
-cd WEBD-3012-Assignment12
+git clone https://github.com/DeshuiYu-RRC/WEBD-3012-Assignment14.git
+cd WEBD-3012-Assignment14
 ```
 
 #### 2. Build the Docker Image
 
 ```bash
-docker build --no-cache -t deshui_yu_coding_assignment13 .
+docker build --no-cache -t deshui_yu_coding_assignment14 .
 ```
 
 #### 3. Run the Docker Container
 
 ```bash
-docker run -p 8018:8018 --name deshui_yu_coding_assignment13 deshui_yu_coding_assignment13
+docker run -p 5575:5575 --name deshui_yu_coding_assignment14 deshui_yu_coding_assignment14
 ```
 
 #### 4. Access Storybook
@@ -54,7 +54,7 @@ docker run -p 8018:8018 --name deshui_yu_coding_assignment13 deshui_yu_coding_as
 Open your browser and navigate to:
 
 ```
-http://localhost:8018
+http://localhost:5575
 ```
 
 or
@@ -132,9 +132,9 @@ npm test -- --coverage
 
 ## Docker Details
 
-- **Container Name:** `deshui_yu_coding_assignment13`
-- **Working Directory:** `/deshui_yu_ui_garden_build_checks`
-- **Port:** `8018`
+- **Container Name:** `deshui_yu_coding_assignment14`
+- **Working Directory:** `/deshui_yu_final_site`
+- **Port:** `5575`
 - **Web Server:** Nginx Alpine
 - **Build:** Multi-stage build with Node.js 20
 

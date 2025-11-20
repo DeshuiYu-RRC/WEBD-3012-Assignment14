@@ -21,13 +21,14 @@ const StyledText = styled.p<TextProps>`
   }
 `;
 
-export const Text: React.FC<TextProps> = ({
-  text = 'Text content',
+export const Text: React.FC<TextProps & { children?: React.ReactNode }> = ({
+  text,
   backgroundColor,
   color,
   disabled = false,
   size = 'medium',
   weight = 'normal',
+  children,
 }) => {
   return (
     <StyledText
@@ -38,7 +39,7 @@ export const Text: React.FC<TextProps> = ({
       weight={weight}
       data-testid="text-component"
     >
-      {text}
+      {children !== undefined ? children : text || 'Text content'}
     </StyledText>
   );
 };

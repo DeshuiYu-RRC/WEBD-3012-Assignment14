@@ -45,12 +45,16 @@ const StyledButton = styled.button<ButtonProps>`
 `;
 
 // The actual Button component
-export const Button: React.FC<ButtonProps> = ({
-  text = 'Click me',
+export const Button: React.FC<
+  ButtonProps & { children?: React.ReactNode; variant?: string }
+> = ({
+  text,
   backgroundColor,
   disabled = false,
   onClick,
   size = 'medium',
+  children,
+  variant,
 }) => {
   return (
     <StyledButton
@@ -60,7 +64,7 @@ export const Button: React.FC<ButtonProps> = ({
       size={size}
       data-testid="button-component"
     >
-      {text}
+      {children !== undefined ? children : text || 'Click me'}
     </StyledButton>
   );
 };

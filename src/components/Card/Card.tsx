@@ -42,12 +42,13 @@ const CardContent = styled.p<{ disabled?: boolean }>`
   line-height: 1.6;
 `;
 
-export const Card: React.FC<CardProps> = ({
+export const Card: React.FC<CardProps & { children?: React.ReactNode }> = ({
   title = 'Card Title',
   content = 'Card content goes here',
   backgroundColor,
   disabled = false,
   elevation = 2,
+  children,
 }) => {
   return (
     <StyledCard
@@ -56,8 +57,12 @@ export const Card: React.FC<CardProps> = ({
       elevation={elevation}
       data-testid="card-component"
     >
-      <CardTitle disabled={disabled}>{title}</CardTitle>
-      <CardContent disabled={disabled}>{content}</CardContent>
+      {title && <CardTitle disabled={disabled}>{title}</CardTitle>}
+      {children ? (
+        children
+      ) : (
+        <CardContent disabled={disabled}>{content}</CardContent>
+      )}
     </StyledCard>
   );
 };

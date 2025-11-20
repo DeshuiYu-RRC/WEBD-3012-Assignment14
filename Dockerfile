@@ -1,14 +1,15 @@
-# This is assignment12 - storybook
+# Build the React Portfolio Website
 FROM node:20-alpine AS builder
-WORKDIR /deshui_yu_ui_garden_build_checks
+WORKDIR /deshui_yu_ui_final_site
 COPY package*.json ./
 RUN npm ci
 COPY . .
-RUN npm run build-storybook
+RUN npm run build
 
-# This is assignment13 - server
-FROM nginx:alpine
-COPY --from=builder /deshui_yu_ui_garden_build_checks/storybook-static /usr/share/nginx/html
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-EXPOSE 8018
-CMD ["nginx", "-g", "daemon off;"]
+# Serve the built app on port 5575
+FROM node:20-alpine
+WORKDIR /app
+RUN npm install -g serve
+COPY --from=builder /deshui_yu_ui_final_site/build /app/build
+EXPOSE 5575
+CMD ["serve", "-s", "build", "-l", "5575"]

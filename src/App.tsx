@@ -1,25 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Header from './pages/Header';
+import BasicInfo from './pages/BasicInfo';
+import Work from './pages/Work';
+import Skills from './pages/Skills';
+import Resources from './pages/Resources';
+import DeveloperSetup from './pages/DeveloperSetup';
 
 function App() {
-  // const unusedVar = 'hello world';
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React -- Test3
-        </a>
-      </header>
+      <Header />
+      <main>
+        <BasicInfo />
+        <Work />
+        <Skills />
+        <Resources />
+        <DeveloperSetup />
+      </main>
+      <footer>
+        <p>Provided By Deshui Yu</p>
+      </footer>
     </div>
   );
 }
